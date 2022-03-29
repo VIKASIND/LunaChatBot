@@ -1,6 +1,3 @@
-import re
-import os
-from asyncio import gather, get_event_loop, sleep
 import ssl
 
 try:
@@ -11,6 +8,9 @@ except AttributeError:
 else:
     # Handle target environment that doesn't support HTTPS verification
     ssl._create_default_https_context = _create_unverified_https_context
+import re
+import os
+from asyncio import gather, get_event_loop, sleep
 from aiohttp import ClientSession
 from pyrogram import Client, filters, idle
 from Python_ARQ import ARQ
